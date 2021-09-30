@@ -29,7 +29,7 @@ public class UsuarioDao {
     }
 
  
-    
+   //criar Usuer 
    public void criarUsuario(Usuario user ){
         
                     String sql ="insert into usuarios(senha,nivel_acesso,nome,sexo,data_nascimento,telefone) values(?,?,?,?,?,?)";
@@ -68,7 +68,26 @@ public class UsuarioDao {
     
     
     
-    void consultarUsuario(){
+     String consultarUsuario(Usuario user){
+       
+        String sql ="select *from usuarios where nome=? and senha =?";
+        
+        try {
+             pst = conexao.prepareStatement(sql);
+             pst.setString(1, user.getNome());
+             pst.setString(2, user.getSenha());
+              
+              // a linha executa a query
+              rs= pst.executeQuery();
+              
+           return "sucesso";   
+
+        } catch (Exception e) {
+            System.out.println(e);
+            return null;
+        }
+
+        
         
     }
     

@@ -33,9 +33,9 @@ public class LoginController {
     
     public void EntrarSistema(){
        
-      Usuario usuario = helper.obtermodelo();
-      UsuarioDao salvarBanco =  new UsuarioDao();
-      salvarBanco.criarUsuario(usuario);
+      Usuario modelo = helper.obtermodelo();
+      UsuarioDao usuarioAutenticado = new UsuarioDao();
+      
       
     }
     
