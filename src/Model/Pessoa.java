@@ -59,7 +59,25 @@ public class Pessoa {
           Logger.getLogger(Pessoa.class.getName()).log(Level.SEVERE, null, ex);
       }
 
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
        
+    }
+
+    public Pessoa(String nome) {
+        this.nome = nome;
     }
 
   
