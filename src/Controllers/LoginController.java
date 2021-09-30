@@ -35,7 +35,15 @@ public class LoginController {
        
       Usuario modelo = helper.obtermodelo();
       UsuarioDao usuarioAutenticado = new UsuarioDao();
+      usuarioAutenticado.consultarUsuario(modelo);
       
+        if (usuarioAutenticado.consultarUsuario(modelo)==null) {
+            
+            this.view.exibirMensagem("Usario ou pass erradas");
+            
+        }else {
+            this.view.exibirMensagem("Usuario Logado");
+        }
       
     }
     

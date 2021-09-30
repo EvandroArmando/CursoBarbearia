@@ -68,7 +68,7 @@ public class UsuarioDao {
     
     
     
-     String consultarUsuario(Usuario user){
+    public String consultarUsuario(Usuario user){
        
         String sql ="select *from usuarios where nome=? and senha =?";
         
