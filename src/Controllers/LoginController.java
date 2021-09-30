@@ -9,6 +9,7 @@ import Dao.UsuarioDao;
 import Helpers.HelperUsuario;
 import Model.Usuario;
 import View.Login;
+import View.MenuPrincipal;
 
 /**
  *
@@ -43,6 +44,10 @@ public class LoginController {
             
         }else {
             this.view.exibirMensagem("Usuario Logado");
+           this.view.dispose();
+           MenuPrincipal principal = new MenuPrincipal();
+           principal.setVisible(true);
+            
         }
       
     }

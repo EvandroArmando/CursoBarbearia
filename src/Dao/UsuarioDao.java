@@ -79,17 +79,23 @@ public class UsuarioDao {
               
               // a linha executa a query
               rs= pst.executeQuery();
-              
-           return "sucesso";   
+            if (rs.next()) {
 
+                return "sucesso";
+                
+            } else {
+                 return null;
+            }
         } catch (Exception e) {
             System.out.println(e);
-            return null;
+              return null;
         }
+        }
+    
 
         
         
-    }
+    
     
     
     
