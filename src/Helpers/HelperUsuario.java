@@ -28,8 +28,7 @@ public class HelperUsuario {
     String nome = this.view.getjUsuario().getText();
     String password = this.view.getjPassword().getText();
        
-    Usuario modelo = new Usuario(password, "adm", 1, nome, 'F', "27-09-1997", "911825429");
-    
+    Usuario modelo = new Usuario(nome, password);
     return modelo;
     
     
