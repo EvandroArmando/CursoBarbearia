@@ -13,23 +13,14 @@ import Controllers.MenuPrincipalController;
  */
 public class MenuPrincipal extends javax.swing.JFrame {
 
-    private final MenuPrincipalController controller;
 
     /**
      * Creates new form MenuPrincipal
      */
-    public MenuPrincipal(MenuPrincipalController controller) {
+    public MenuPrincipal( ) {
         
         initComponents();
-        this.controller = new MenuPrincipalController(this); 
-
     }
-
-    private MenuPrincipal() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -160,7 +151,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
-            @Override
             public void run() {
                 new MenuPrincipal().setVisible(true);
             }

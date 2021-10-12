@@ -16,20 +16,15 @@ import javax.swing.JTextField;
  */
 public class Login extends javax.swing.JFrame {
 
-    private final LoginController controller;
 
 
     /**
      * Creates new form Login
      */
-    public Login(LoginController controller) { 
+    public Login( ) { 
         initComponents();
-        this.controller = new LoginController(this);
     };
 
-    private Login() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
     /**
      * This method is called from within the constructor to initialize the form.
