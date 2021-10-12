@@ -5,10 +5,23 @@
  */
 package Controllers;
 
+import View.Agenda;
+
 /**
  *
  * @author Evandro Armando
  */
 public class MenuPrincipalController {
+   String amor;
+    
+    
+    
+    
+    public void NavegarParaAgenda(){
+        
+        Agenda  agenda = new Agenda();
+        agenda.setVisible(true);
+    }
+    
     
 }
