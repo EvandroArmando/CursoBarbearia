@@ -19,22 +19,23 @@ public class LoginController {
 
     private final Login view;
     private final HelperUsuario helper;
-    private final MenuPrincipalController controladorViewPrincipal;
+    private MenuPrincipalController mudar;
+    private MenuPrincipal View;
 
-    public LoginController(Login view, MenuPrincipalController  controladorViewPrincipal ) {  //controlador da tela login
+    public LoginController(Login view ) {  //controlador da tela login
         this.view = view;
         this.helper = new HelperUsuario(view);
-        this.controladorViewPrincipal = controladorViewPrincipal;
         
     }
 
-    public LoginController(Login aThis) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
+    
+    public void mudarTela(MenuPrincipal  View ){
+        this.mudar = new MenuPrincipalController(View);
+        mudar.NavegarParaAgenda();
     }
     
-    
-    public void fizTarefa(){
-        
+    public void fizTarefa(){       
         this.view.exibirMensagem("Login realizado com sucesso");
     }
     
@@ -52,8 +53,8 @@ public class LoginController {
         }else {
             this.view.exibirMensagem("Usuario Logado");
             this.view.dispose();
-            this.controladorViewPrincipal.NavegarParaAgenda();
-                       
+            mudarTela(View);
+                                  
         }
       
     }

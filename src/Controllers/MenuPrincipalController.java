@@ -24,7 +24,6 @@ public class MenuPrincipalController {
     
     
     public void NavegarParaAgenda(){
-        
         Agenda  agenda = new Agenda();
         agenda.setVisible(true);
     }

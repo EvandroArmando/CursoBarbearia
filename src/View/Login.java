@@ -16,14 +16,22 @@ import javax.swing.JTextField;
  */
 public class Login extends javax.swing.JFrame {
 
+    private final LoginController controller;
+
 
 
     /**
      * Creates new form Login
+     * @param view
      */
-    public Login( ) { 
+    public Login(  ) { 
+        
         initComponents();
+         this.controller = new LoginController(this);
+
+
     };
+
 
 
     /**

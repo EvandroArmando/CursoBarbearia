@@ -13,13 +13,19 @@ import Controllers.MenuPrincipalController;
  */
 public class MenuPrincipal extends javax.swing.JFrame {
 
+    private final MenuPrincipalController controller;
+
+
 
     /**
      * Creates new form MenuPrincipal
      */
+    
+
     public MenuPrincipal( ) {
-        
-        initComponents();
+      initComponents();
+      this.controller = new  Controllers.MenuPrincipalController(this);
+
     }
 
     /**
@@ -119,7 +125,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void MenuItemAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemAgendaActionPerformed
         // TODO add your handling code here:
-        
+        controller.NavegarParaAgenda();
     }//GEN-LAST:event_MenuItemAgendaActionPerformed
 
     /**
