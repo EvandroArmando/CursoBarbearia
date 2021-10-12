@@ -5,18 +5,31 @@
  */
 package View;
 
+import Controllers.MenuPrincipalController;
+
 /**
  *
  * @author tiago
  */
 public class MenuPrincipal extends javax.swing.JFrame {
 
+    private final MenuPrincipalController controller;
+
     /**
      * Creates new form MenuPrincipal
      */
-    public MenuPrincipal() {
+    public MenuPrincipal(MenuPrincipalController controller) {
+        
         initComponents();
+        this.controller = new MenuPrincipalController(this); 
+
     }
+
+    private MenuPrincipal() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -76,6 +89,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         MenuItemAgenda.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         MenuItemAgenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/icons/agenda32-icon.png"))); // NOI18N
         MenuItemAgenda.setText("  Agenda");
+        MenuItemAgenda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuItemAgendaActionPerformed(evt);
+            }
+        });
         MenuOperacao.add(MenuItemAgenda);
 
         jMenuBar1.add(MenuOperacao);
@@ -108,6 +126,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_MenuItemRelatorioActionPerformed
 
+    private void MenuItemAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemAgendaActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_MenuItemAgendaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -137,6 +160,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new MenuPrincipal().setVisible(true);
             }

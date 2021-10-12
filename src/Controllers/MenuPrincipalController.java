@@ -6,13 +6,19 @@
 package Controllers;
 
 import View.Agenda;
+import View.MenuPrincipal;
 
 /**
  *
  * @author Evandro Armando
  */
 public class MenuPrincipalController {
-   String amor;
+
+    private final MenuPrincipal View;
+
+    public MenuPrincipalController(MenuPrincipal  View) {
+        this.View = View; 
+    }
     
     
     

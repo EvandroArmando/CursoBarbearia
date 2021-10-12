@@ -18,12 +18,17 @@ public class Login extends javax.swing.JFrame {
 
     private final LoginController controller;
 
+
     /**
      * Creates new form Login
      */
-    public Login() {
+    public Login(LoginController controller) { 
         initComponents();
-        controller = new Controllers.LoginController(this);
+        this.controller = new LoginController(this);
+    };
+
+    private Login() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**
