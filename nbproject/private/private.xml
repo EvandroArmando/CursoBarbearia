@@ -4,11 +4,11 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/Evandro%20Armando/Documents/NetBeansProjects/CursoBarbearia/src/View/MenuPrincipal.java</file>
-            <file>file:/C:/Users/Evandro%20Armando/Documents/NetBeansProjects/CursoBarbearia/src/Controllers/RegistroController.java</file>
-            <file>file:/C:/Users/Evandro%20Armando/Documents/NetBeansProjects/CursoBarbearia/src/Dao/UsuarioDao.java</file>
             <file>file:/C:/Users/Evandro%20Armando/Documents/NetBeansProjects/CursoBarbearia/src/Controllers/LoginController.java</file>
+            <file>file:/C:/Users/Evandro%20Armando/Documents/NetBeansProjects/CursoBarbearia/src/Dao/ConexaoBanco.java</file>
             <file>file:/C:/Users/Evandro%20Armando/Documents/NetBeansProjects/CursoBarbearia/src/View/Login.java</file>
-            <file>file:/C:/Users/Evandro%20Armando/Documents/NetBeansProjects/CursoBarbearia/src/View/Registro.java</file>
+            <file>file:/C:/Users/Evandro%20Armando/Documents/NetBeansProjects/CursoBarbearia/src/Controllers/MenuPrincipalController.java</file>
+            <file>file:/C:/Users/Evandro%20Armando/Documents/NetBeansProjects/CursoBarbearia/src/Model/NewMain.java</file>
         </group>
     </open-files>
 </project-private>
