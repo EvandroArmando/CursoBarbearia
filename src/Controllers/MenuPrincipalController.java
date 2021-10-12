@@ -29,4 +29,11 @@ public class MenuPrincipalController {
     }
     
     
+    public void NavegarParaMenu(){
+        
+        MenuPrincipal menu = new MenuPrincipal();
+        menu.setVisible(true);
+    }
+    
+    
 }

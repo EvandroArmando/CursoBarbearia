@@ -32,7 +32,7 @@ public class LoginController {
     
     public void mudarTela(MenuPrincipal  View ){
         this.mudar = new MenuPrincipalController(View);
-        mudar.NavegarParaAgenda();
+        this.mudar.NavegarParaMenu();
     }
     
     public void fizTarefa(){       
