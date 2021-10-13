@@ -5,13 +5,19 @@
  */
 package Controllers;
 
+import View.Agenda;
+
 /**
  *
  * @author Evandro Armando
  */
 public class AgendaController {
 
-    public AgendaController() {
+    private final Agenda view;
+
+    public AgendaController(Agenda view) {
+      
+     this.view = view;   
     }
     
     
