@@ -7,6 +7,7 @@ package Controllers;
 
 import View.Agenda;
 import View.MenuPrincipal;
+import View.UsuarioView;
 
 /**
  *
@@ -28,7 +29,10 @@ public class MenuPrincipalController {
         agenda.setVisible(true);
     }
     
-    
+    public void NavegarUsuario(){
+        UsuarioView JanelaUsuario = new UsuarioView();
+        JanelaUsuario.setVisible(true);
+    }
     public void NavegarParaMenu(){
         
         MenuPrincipal menu = new MenuPrincipal();
