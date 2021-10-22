@@ -5,6 +5,7 @@
  */
 package View;
 
+import Controllers.ControllerViewUSuario;
 import Controllers.MenuPrincipalController;
 
 /**
@@ -25,6 +26,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     public MenuPrincipal( ) {
       initComponents();
       this.controller = new  Controllers.MenuPrincipalController(this);
+      
 
     }
 
@@ -140,6 +142,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void MenuItemUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemUsuarioActionPerformed
               controller.NavegarUsuario();
+              
     }//GEN-LAST:event_MenuItemUsuarioActionPerformed
 
     private void MenuItemServicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemServicoActionPerformed

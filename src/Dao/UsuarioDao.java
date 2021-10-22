@@ -110,8 +110,9 @@ public class UsuarioDao {
                u.setSenha(rs.getString("senha"));
                lista.add(u);
             }
+            System.out.println("sucesso ao listar");
         } catch (Exception e) {
-            System.out.println(e);
+            System.out.println("erro ao buscar a lista "+e);
             JOptionPane.showMessageDialog(null, "Erro ao buscar os dados da databse");
         }
         return (ArrayList<Usuario>) lista;

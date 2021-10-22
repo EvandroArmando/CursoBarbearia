@@ -32,6 +32,8 @@ public class ControllerViewUSuario {
     public void actualizarTabela(){
         UsuarioDao user = new UsuarioDao();
         ArrayList<Usuario> usuarios =user.ListarTodosUsuarios();
+        
+        helper.preencherTabela(usuarios);
     }
     
     

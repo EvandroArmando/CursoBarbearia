@@ -32,12 +32,14 @@ public class MenuPrincipalController {
     public void NavegarUsuario(){
         UsuarioView JanelaUsuario = new UsuarioView();
         JanelaUsuario.setVisible(true);
+        
     }
     public void NavegarParaMenu(){
         
         MenuPrincipal menu = new MenuPrincipal();
         menu.setVisible(true);
     }
+    
     
     
 }
