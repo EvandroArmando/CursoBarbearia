@@ -5,8 +5,10 @@
  */
 package Controllers;
 
+import Dao.ClienteDao;
 import Dao.UsuarioDao;
 import Helpers.HelperViewUsuario;
+import Model.Cliente;
 import Model.Usuario;
 import View.UsuarioView;
 import java.util.ArrayList;
@@ -37,5 +39,11 @@ public class ControllerViewUSuario {
     }
     
     
+    public void actualizarjComboBoxCliente(){
+        ClienteDao cliente = new ClienteDao();
+        ArrayList<Cliente> clientes = cliente.ListarTodosClientes();
+        helper.preencherJComboBoxClientes(clientes);
+        
+    }
     
 }

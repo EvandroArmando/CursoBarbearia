@@ -5,9 +5,11 @@
  */
 package Helpers;
 
+import Model.Cliente;
 import Model.Usuario;
 import View.UsuarioView;
 import java.util.ArrayList;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -40,6 +42,16 @@ public class HelperViewUsuario {
     }
     
        }
+
+    public void preencherJComboBoxClientes(ArrayList<Cliente> clientes) {
+        
+       DefaultComboBoxModel comboBoxModel = (DefaultComboBoxModel) view.getjComboBoxCliente().getModel();
+       
+        for (Cliente cliente : clientes) {
+            comboBoxModel.addElement(cliente.getNome());
+        }
+        
+    }
     
     
     
