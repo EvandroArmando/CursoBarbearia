@@ -139,12 +139,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_MenuItemAgendaActionPerformed
 
     private void MenuItemUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemUsuarioActionPerformed
-        // TODO add your handling code here:
+              controller.NavegarUsuario();
     }//GEN-LAST:event_MenuItemUsuarioActionPerformed
 
     private void MenuItemServicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemServicoActionPerformed
         // TODO add your handling code here:
-        controller.NavegarUsuario();
+ 
     }//GEN-LAST:event_MenuItemServicoActionPerformed
 
     /**

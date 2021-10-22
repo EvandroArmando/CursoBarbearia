@@ -5,6 +5,9 @@
  */
 package View;
 
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+
 /**
  *
  * @author Evandro Armando
@@ -61,6 +64,7 @@ public class UsuarioView extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**
@@ -96,6 +100,22 @@ public class UsuarioView extends javax.swing.JFrame {
                 new UsuarioView().setVisible(true);
             }
         });
+    }
+
+    public JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public void setjScrollPane1(JScrollPane jScrollPane1) {
+        this.jScrollPane1 = jScrollPane1;
+    }
+
+    public JTable getjTabela() {
+        return jTabela;
+    }
+
+    public void setjTabela(JTable jTabela) {
+        this.jTabela = jTabela;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

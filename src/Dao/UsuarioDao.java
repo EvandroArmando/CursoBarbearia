@@ -11,6 +11,8 @@ import database.Modulo_de_conexao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 
 /**
@@ -93,6 +95,29 @@ public class UsuarioDao {
         }
     
 
+    public ArrayList <Usuario> ListarTodosUsuarios(){
+        
+        List<Usuario> lista = new ArrayList<>();
+          String sql ="select *from usuarios ";
+        
+        try {
+             pst = conexao.prepareStatement(sql);
+              // a linha executa a query
+              rs  = pst.executeQuery();
+            while (rs.next()) {                
+               Usuario u = new Usuario("","");
+               u.setNome(rs.getString("nome"));
+               u.setSenha(rs.getString("senha"));
+               lista.add(u);
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+            JOptionPane.showMessageDialog(null, "Erro ao buscar os dados da databse");
+        }
+        return (ArrayList<Usuario>) lista;
+        
+        
+    }
         
         
     
