@@ -82,16 +82,22 @@ public class UsuarioDao {
               // a linha executa a query
               rs= pst.executeQuery();
             if (rs.next()) {
-
+                pst.close();
+                rs.close();
                 return "sucesso";
-                
+                 
             } else {
+                
+                 pst.close();
+                 rs.close();
                  return null;
             }
         } catch (Exception e) {
             System.out.println(e);
               return null;
         }
+        
+      
         }
     
 
@@ -110,11 +116,13 @@ public class UsuarioDao {
                u.setSenha(rs.getString("senha"));
                lista.add(u);
             }
-            System.out.println("sucesso ao listar");
+            pst.close();
+            rs.close();
         } catch (Exception e) {
             System.out.println("erro ao buscar a lista "+e);
             JOptionPane.showMessageDialog(null, "Erro ao buscar os dados da databse");
         }
+         
         return (ArrayList<Usuario>) lista;
         
         

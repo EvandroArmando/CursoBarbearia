@@ -16,7 +16,7 @@ import javax.swing.JTable;
 public class UsuarioView extends javax.swing.JFrame {
 
     private final ControllerViewUSuario controller;
-
+    
    
 
     /**
@@ -25,6 +25,7 @@ public class UsuarioView extends javax.swing.JFrame {
     public UsuarioView() {
         initComponents();
       this.controller = new ControllerViewUSuario(this);
+      controller.actualizarTabela();
     }
 
     /**
@@ -42,13 +43,10 @@ public class UsuarioView extends javax.swing.JFrame {
 
         jTabela.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {},
-                {},
-                {},
-                {}
+
             },
             new String [] {
-
+                "Nome", "Senha"
             }
         ));
         jScrollPane1.setViewportView(jTabela);
@@ -146,6 +144,6 @@ public class UsuarioView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTabela;
+    public javax.swing.JTable jTabela;
     // End of variables declaration//GEN-END:variables
 }
