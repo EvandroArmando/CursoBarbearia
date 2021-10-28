@@ -6,6 +6,9 @@
 package View;
 
 import Controllers.AgendaController;
+import Model.Agendamento;
+import java.util.ArrayList;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFormattedTextField;
@@ -410,5 +413,24 @@ public class Agenda extends javax.swing.JFrame {
 
     private void iniciar() {
         controller.actualizarjcomboBoxCliente();
+    }
+
+
+    public void PreencherTabelaAgendamentos(ArrayList<Agendamento> agendamentos) {
+               DefaultTableModel tableModel = (DefaultTableModel) view.getjTabela().getModel();
+        tableModel.setNumRows(0);
+        
+        //precorrer a lista preencher
+        
+        for (Agendamento agenda : agendamentos) {
+            tableModel.addRow(new Object[]{
+            agenda.getCliente(),
+            agenda.getDataFormatada,
+            agenda.getHoraFormatada,
+            agenda.getObservação(),
+            agenda.getValor(),
+            
+        });
+
     }
 }

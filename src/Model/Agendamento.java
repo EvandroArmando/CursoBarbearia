@@ -91,7 +91,15 @@ public final class Agendamento {
         this.Observação = Observação;
     }
  
-
+   public String gethoraFormatada(){
+     return new SimpleDateFormat("HH:mm").format(data);
+       
+   }
+   
+   public String getdataFormatada(){
+     return new SimpleDateFormat("dd/MM/yyyy").format(data);
+       
+   }
 
     
 }
