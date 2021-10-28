@@ -5,7 +5,13 @@
  */
 package Controllers;
 
+import Dao.AgendamentoDao;
+import Dao.ClienteDao;
+import Dao.UsuarioDao;
+import Helpers.HelperAgenda;
+import Model.Cliente;
 import View.Agenda;
+import java.util.ArrayList;
 
 /**
  *
@@ -14,16 +20,30 @@ import View.Agenda;
 public class AgendaController {
 
     private final Agenda view;
+    private final HelperAgenda helper;
 
     public AgendaController(Agenda view) {
       
-     this.view = view;   
+     this.view = view;  
+     this.helper = new HelperAgenda(view);
     }
     
+    
+    public void actualizarjcomboBoxCliente(){
+        
+         ClienteDao cliente = new ClienteDao();
+         ArrayList<Cliente> clientes = cliente.ListarTodosClientes();
+         
+         this.helper.PreecherJComboBox(clientes);
+         
+         
+    }
+
     
     public void actualizarTabela(){
-        
-        
-    }
+        AgendamentoDao agendamento = new AgendamentoDao();
+        ArrayList<Agendamento> agendamentos = agendamento.equals(this);
+    }  
+    
     
 }
