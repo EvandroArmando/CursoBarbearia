@@ -44,7 +44,7 @@ public class AgendaController {
     public void actualizarTabela(){
         AgendamentoDao agendamento = new AgendamentoDao();
         ArrayList<Agendamento> agendamentos = agendamento.ListarTodosAgendamentos();
-        this.view.PreencherTabelaAgendamentos(agendamentos);
+        this.helper.PreencherTabelaAgendamentos(agendamentos);
     }  
     
     

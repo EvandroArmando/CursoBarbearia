@@ -5,10 +5,12 @@
  */
 package Helpers;
 
+import Model.Agendamento;
 import Model.Cliente;
 import View.Agenda;
 import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -32,6 +34,29 @@ public class HelperAgenda {
         }
                
      
+
+    }
+
+    public void PreencherTabelaAgendamentos(ArrayList<Agendamento> agendamentos) {
+        
+               DefaultTableModel tableModel = (DefaultTableModel) view.getTableAgendamentos().getModel();
+        tableModel.setNumRows(0);
+        
+        //precorrer a lista preencher
+        
+        for (Agendamento agenda : agendamentos) {
+            tableModel.addRow(new Object[]{
+            agenda.getCliente(),
+            agenda.getdataFormatada(),
+            agenda.gethoraFormatada(),
+            agenda.getObservação(),
+            agenda.getValor(),
+            agenda.getServico(),
+            agenda.getId()
+            
+        });
+
+    }
 
     }
 

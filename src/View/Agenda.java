@@ -17,6 +17,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -416,21 +417,4 @@ public class Agenda extends javax.swing.JFrame {
     }
 
 
-    public void PreencherTabelaAgendamentos(ArrayList<Agendamento> agendamentos) {
-               DefaultTableModel tableModel = (DefaultTableModel) view.getjTabela().getModel();
-        tableModel.setNumRows(0);
-        
-        //precorrer a lista preencher
-        
-        for (Agendamento agenda : agendamentos) {
-            tableModel.addRow(new Object[]{
-            agenda.getCliente(),
-            agenda.getDataFormatada,
-            agenda.getHoraFormatada,
-            agenda.getObservação(),
-            agenda.getValor(),
-            
-        });
-
-    }
 }
