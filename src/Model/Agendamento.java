@@ -5,8 +5,11 @@
  */
 package Model;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
-import javafx.scene.chart.PieChart.Data;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -20,17 +23,22 @@ public final class Agendamento {
  private Servico servico;
  private String Valor;
  private Date data;
- private Date hora;
  private String Observação;
 
-    public Agendamento(int id, Cliente cliente, Servico servico, String Valor, Date data, Date hora, String Observação) {
+    public Agendamento(int id, Cliente cliente, Servico servico, String Valor, String data, String Observação) {
         this.id = id;
         this.cliente = cliente;
         this.servico = servico;
         this.Valor = Valor;
-        this.data = data;
-        this.hora = hora;
         this.Observação = Observação;
+        
+        
+        try {
+          this.data = new SimpleDateFormat("dd-MM-yyyy").parse(data);
+      } catch (ParseException ex) {
+          Logger.getLogger(Pessoa.class.getName()).log(Level.SEVERE, null, ex);
+      }
+
     }
 
     public int getId() {
@@ -73,13 +81,7 @@ public final class Agendamento {
         this.data = data;
     }
 
-    public Date getHora() {
-        return hora;
-    }
 
-    public void setHora(Date hora) {
-        this.hora = hora;
-    }
 
     public String getObservação() {
         return Observação;

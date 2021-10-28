@@ -9,6 +9,7 @@ import Dao.AgendamentoDao;
 import Dao.ClienteDao;
 import Dao.UsuarioDao;
 import Helpers.HelperAgenda;
+import Model.Agendamento;
 import Model.Cliente;
 import View.Agenda;
 import java.util.ArrayList;
