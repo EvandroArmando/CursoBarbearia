@@ -14,7 +14,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import javax.swing.JOptionPane;
+import static jdk.nashorn.internal.objects.NativeArray.map;
+import static jdk.nashorn.internal.objects.NativeJava.type;
 
 /**
  *
@@ -35,26 +38,24 @@ public class AgendamentoDao {
         public ArrayList <Agendamento> ListarTodosAgendamentos(){
         
         List<Agendamento> lista = new ArrayList<>();
-          String sql ="select *from usuarios ";
+          String sql ="select *from agendamentos ";
         
         try {
              pst = conexao.prepareStatement(sql);
               // a linha executa a query
               rs  = pst.executeQuery();
             while (rs.next()) {  
-               
+               //listar a tabela de coisas
                 Cliente cliente = new Cliente("0", "0", 0,"0", '0', "0", "0");
                 Servico servico = new Servico(0, "", 0);
-               Agendamento agendamento = new Agendamento(0, cliente, servico, "", "", "");
-               
+               Agendamento agendamento = new Agendamento(0, cliente, servico, "sw", "sw", "sw");
+               String servicoConvertido = cliente.toString();
                agendamento.setId(rs.getInt("id"));
-               agendamento.setObservação(rs.getString("obs"));
+               agendamento.setObservação(rs.getString("observacao"));
                agendamento.setValor(rs.getString("valor"));
                agendamento.setData(rs.getDate("data"));
-               agendamento.setCliente((Cliente) rs.getObject("cliente"));
-               agendamento.setServico((Servico) rs.getObject("servico"));
-               
-              
+               cliente.setNome(rs.getString("cliente"));
+               servico.setDescricao(rs.getString("servico"));
                lista.add(agendamento);
                
                

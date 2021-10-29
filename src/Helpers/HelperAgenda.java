@@ -46,13 +46,13 @@ public class HelperAgenda {
         
         for (Agendamento agenda : agendamentos) {
             tableModel.addRow(new Object[]{
+            agenda.getId(),
             agenda.getCliente(),
+            agenda.getServico().getDescricao(),
+            agenda.getValor(),
             agenda.getdataFormatada(),
             agenda.gethoraFormatada(),
             agenda.getObservação(),
-            agenda.getValor(),
-            agenda.getServico(),
-            agenda.getId()
             
         });
 

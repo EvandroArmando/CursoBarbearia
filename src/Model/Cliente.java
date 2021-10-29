@@ -26,7 +26,6 @@ public final class Cliente extends Pessoa{
     
     
     
-    
     public String getEndereco() {
         return endereco;
     }
@@ -57,5 +56,6 @@ public final class Cliente extends Pessoa{
       return getNome();
     }
 
+    
     
 }
