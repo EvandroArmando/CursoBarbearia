@@ -7,6 +7,7 @@ package Helpers;
 
 import Model.Agendamento;
 import Model.Cliente;
+import Model.Servico;
 import View.Agenda;
 import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
@@ -58,6 +59,16 @@ public class HelperAgenda {
 
     }
 
+    }
+
+    public void PreencherJComboBoxServico(ArrayList<Servico> servicos) {
+        
+        DefaultComboBoxModel  comboBoxModel =(DefaultComboBoxModel) view.getTextServico().getModel();
+        
+        for (Servico servico : servicos) {
+            comboBoxModel.addElement(servico);
+            
+        }
     }
 
 

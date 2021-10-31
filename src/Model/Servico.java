@@ -22,6 +22,11 @@ public final class Servico {
         this.valor = valor;
     }
 
+    public Servico() {
+    }
+    
+    
+
     public int getId() {
         return id;
     }

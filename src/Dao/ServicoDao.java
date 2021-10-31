@@ -5,10 +5,66 @@
  */
 package Dao;
 
+import Model.Servico;
+import database.Modulo_de_conexao;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Evandro Armando
  */
 public class ServicoDao {
+    
+    Connection conexao = null;
+    PreparedStatement pst = null;
+    ResultSet rs = null; 
+
+    public ServicoDao() {
+        
+        conexao = Modulo_de_conexao.conector();
+
+        
+    }
+
+    
+    
+    public ArrayList<Servico> ListarTodosServicos(){
+        
+        List<Servico> lista =  new ArrayList<>();
+        String sql ="select from clientes";
+        
+        
+        try {
+            pst= conexao.prepareStatement(sql);
+            rs = pst.executeQuery();
+            
+            while (rs.next()) {                
+              Servico servico = new Servico(0, "", 0.0);
+              servico.setId(rs.getInt("id"));
+              servico.setDescricao(rs.getString("descricao"));
+              servico.setValor((rs.getDouble("valor")));
+              lista.add(servico);
+            }
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "erro ao lista clientes");
+        }
+        
+       return (ArrayList<Servico>) lista ;
+        
+        
+    }
+    
+    
+    
+    
+    
+    
+    
     
 }

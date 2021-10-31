@@ -415,6 +415,7 @@ public class Agenda extends javax.swing.JFrame {
     private void iniciar() {
         controller.actualizarjcomboBoxCliente();
         controller.actualizarTabela();
+        controller.actualizarjcomboBoxCliente();
     }
 
 

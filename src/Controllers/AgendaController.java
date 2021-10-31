@@ -7,10 +7,12 @@ package Controllers;
 
 import Dao.AgendamentoDao;
 import Dao.ClienteDao;
+import Dao.ServicoDao;
 import Dao.UsuarioDao;
 import Helpers.HelperAgenda;
 import Model.Agendamento;
 import Model.Cliente;
+import Model.Servico;
 import View.Agenda;
 import java.util.ArrayList;
 
@@ -38,6 +40,16 @@ public class AgendaController {
          this.helper.PreecherJComboBox(clientes);
          
          
+    }
+    
+    
+    public void actualizarjcomboBoxServico(){
+       
+        ServicoDao servico = new  ServicoDao();
+        ArrayList<Servico> servicos = servico.ListarTodosServicos();
+        this.helper.PreencherJComboBoxServico(servicos);
+        
+        
     }
 
     
