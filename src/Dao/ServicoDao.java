@@ -36,7 +36,7 @@ public class ServicoDao {
     public ArrayList<Servico> ListarTodosServicos(){
         
         List<Servico> lista =  new ArrayList<>();
-        String sql ="select from clientes";
+        String sql ="select from servicos";
         
         
         try {
@@ -45,9 +45,7 @@ public class ServicoDao {
             
             while (rs.next()) {                
               Servico servico = new Servico(0, "", 0.0);
-              servico.setId(rs.getInt("id"));
               servico.setDescricao(rs.getString("descricao"));
-              servico.setValor((rs.getDouble("valor")));
               lista.add(servico);
             }
             
