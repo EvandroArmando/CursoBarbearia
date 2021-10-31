@@ -66,7 +66,7 @@ public class HelperAgenda {
         DefaultComboBoxModel  comboBoxModel =(DefaultComboBoxModel) view.getTextServico().getModel();
         
         for (Servico servico : servicos) {
-            comboBoxModel.addElement(servico);
+            comboBoxModel.addElement(servico.getDescricao());
             
         }
     }
