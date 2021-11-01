@@ -78,9 +78,9 @@ public class HelperAgenda {
        ServicoDao dao = new ServicoDao();
        String resultadoDaBuscaDoPeco ="";
        resultadoDaBuscaDoPeco =dao.SetarPreco(ValorDoComboBoxServico);
-       
-        Servico servico = new Servico(0, resultadoDaBuscaDoPeco, 0);
-        return servico;
+       Double valor =Double.parseDouble(resultadoDaBuscaDoPeco);//converter
+       Servico servico = new Servico(0, "",valor);
+       return servico;
                
         
 

@@ -64,14 +64,15 @@ public class ServicoDao {
     public String SetarPreco(String ValorDoComboBoxServico) {
         
         String  Servico="";
-        String sql = "select valor from servicos where descricao=\"frances\";";
+        String sql = "select valor from servicos where descricao =?";
         
         try {
             pst = conexao.prepareStatement(sql);
+            pst.setString(1, ValorDoComboBoxServico);
             rs=pst.executeQuery();
             if (rs.next()) {
                  Servico= rs.getString("valor");
-                System.out.println("servico"+Servico); 
+                 System.out.println("servico"+Servico); 
             }
         } catch (Exception e) {
            JOptionPane.showMessageDialog(null, "erro ao buscar preco do banco");

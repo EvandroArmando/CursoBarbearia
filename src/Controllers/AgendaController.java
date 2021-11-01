@@ -63,6 +63,7 @@ public class AgendaController {
     public void actualizarPrecoServico(){
         
         Servico servico = helper.obterServico();
+        System.out.println("oi  "+servico.getValor());
         helper.setarValor(servico.getValor());
     }
     
