@@ -5,6 +5,7 @@
  */
 package Helpers;
 
+import Dao.ServicoDao;
 import Model.Agendamento;
 import Model.Cliente;
 import Model.Servico;
@@ -69,6 +70,25 @@ public class HelperAgenda {
             comboBoxModel.addElement(servico.getDescricao());
             
         }
+    }
+
+    public Servico obterServico() {
+       //return  (Servico) view.getTextServico().getSelectedItem();
+       String ValorDoComboBoxServico = view.getTextServico().getSelectedItem().toString();
+       ServicoDao dao = new ServicoDao();
+       String resultadoDaBuscaDoPeco ="";
+       resultadoDaBuscaDoPeco =dao.SetarPreco(ValorDoComboBoxServico);
+       
+        Servico servico = new Servico(0, resultadoDaBuscaDoPeco, 0);
+        return servico;
+               
+        
+
+    }
+
+    public void setarValor(double valor) {
+        
+        view.getTextValor().setText(valor+"");
     }
 
 

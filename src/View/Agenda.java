@@ -281,6 +281,11 @@ public class Agenda extends javax.swing.JFrame {
 
         getContentPane().add(TextCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 290, 280, 40));
 
+        TextServico.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                TextServicoItemStateChanged(evt);
+            }
+        });
         getContentPane().add(TextServico, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 350, 280, 40));
 
         TextValor.setText("0");
@@ -352,6 +357,11 @@ public class Agenda extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_TextValorActionPerformed
 
+    private void TextServicoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_TextServicoItemStateChanged
+        // TODO add your handling code here:
+      controller.actualizarPrecoServico();
+    }//GEN-LAST:event_TextServicoItemStateChanged
+
     /**
      * @param args the command line arguments
      */
@@ -415,6 +425,8 @@ public class Agenda extends javax.swing.JFrame {
         controller.actualizarjcomboBoxCliente();
         controller.actualizarTabela();
         controller.actualizarjcomboBoxServico();
+        controller.actualizarPrecoServico();
+
     }
 
 

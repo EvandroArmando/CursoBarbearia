@@ -60,4 +60,10 @@ public class AgendaController {
     }  
     
     
+    public void actualizarPrecoServico(){
+        
+        Servico servico = helper.obterServico();
+        helper.setarValor(servico.getValor());
+    }
+    
 }

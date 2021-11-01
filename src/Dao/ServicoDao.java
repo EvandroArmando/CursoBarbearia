@@ -59,6 +59,29 @@ public class ServicoDao {
         
         
     }
+
+
+    public String SetarPreco(String ValorDoComboBoxServico) {
+        
+        String  Servico="";
+        String sql = "select valor from servicos where descricao=\"frances\";";
+        
+        try {
+            pst = conexao.prepareStatement(sql);
+            rs=pst.executeQuery();
+            if (rs.next()) {
+                 Servico= rs.getString("valor");
+                System.out.println("servico"+Servico); 
+            }
+        } catch (Exception e) {
+           JOptionPane.showMessageDialog(null, "erro ao buscar preco do banco");
+
+        }
+        
+        return Servico;
+ 
+        
+    }
     
     
     
