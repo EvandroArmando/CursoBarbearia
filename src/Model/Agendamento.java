@@ -41,6 +41,11 @@ public final class Agendamento {
 
     }
 
+    public Agendamento() {
+    }
+
+    
+    
     public int getId() {
         return id;
     }

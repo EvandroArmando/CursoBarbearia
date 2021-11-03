@@ -23,6 +23,10 @@ public final class Cliente extends Pessoa{
         this.cep = cep;
     }
 
+    public Cliente(String nome) {
+        super(nome);
+    }
+
     
     
     

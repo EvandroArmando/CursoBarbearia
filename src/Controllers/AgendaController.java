@@ -15,6 +15,7 @@ import Model.Cliente;
 import Model.Servico;
 import View.Agenda;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -24,12 +25,25 @@ public class AgendaController {
 
     private final Agenda view;
     private final HelperAgenda helper;
-
+    String Resultado;
     public AgendaController(Agenda view) {
-      
+     this.Resultado="";
      this.view = view;  
      this.helper = new HelperAgenda(view);
     }
+    
+    
+    public void CadastrarAgendamento(){
+     
+        Agendamento agendar = helper.obterModelo();
+        AgendamentoDao dao =  new AgendamentoDao();
+        dao.adicionar(agendar);
+    }
+    
+    
+    
+    
+    
     
     
     public void actualizarjcomboBoxCliente(){
@@ -66,5 +80,8 @@ public class AgendaController {
         System.out.println("oi  "+servico.getValor());
         helper.setarValor(servico.getValor());
     }
+    
+      
+    
     
 }

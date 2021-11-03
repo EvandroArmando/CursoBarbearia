@@ -13,6 +13,7 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextArea;
@@ -297,7 +298,12 @@ public class Agenda extends javax.swing.JFrame {
         });
         getContentPane().add(TextValor, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 410, 280, 40));
 
-        TextFormatedData.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
+        TextFormatedData.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
+        TextFormatedData.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                TextFormatedDataMouseDragged(evt);
+            }
+        });
         getContentPane().add(TextFormatedData, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 470, 280, 40));
 
         TextFormatedHora.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getTimeInstance(java.text.DateFormat.SHORT))));
@@ -350,7 +356,7 @@ public class Agenda extends javax.swing.JFrame {
     }//GEN-LAST:event_TextIdActionPerformed
 
     private void ButtonAgendarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonAgendarActionPerformed
-        // TODO add your handling code here:
+        controller.CadastrarAgendamento();
     }//GEN-LAST:event_ButtonAgendarActionPerformed
 
     private void TextValorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextValorActionPerformed
@@ -361,6 +367,10 @@ public class Agenda extends javax.swing.JFrame {
         // TODO add your handling code here:
       controller.actualizarPrecoServico();
     }//GEN-LAST:event_TextServicoItemStateChanged
+
+    private void TextFormatedDataMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TextFormatedDataMouseDragged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TextFormatedDataMouseDragged
 
     /**
      * @param args the command line arguments
@@ -411,7 +421,7 @@ public class Agenda extends javax.swing.JFrame {
     private javax.swing.JLabel LabelValor;
     private javax.swing.JTable TableAgendamentos;
     private javax.swing.JComboBox<String> TextCliente;
-    private javax.swing.JFormattedTextField TextFormatedData;
+    public javax.swing.JFormattedTextField TextFormatedData;
     private javax.swing.JFormattedTextField TextFormatedHora;
     private javax.swing.JTextField TextId;
     private javax.swing.JTextArea TextObservacao;
@@ -428,6 +438,12 @@ public class Agenda extends javax.swing.JFrame {
         controller.actualizarPrecoServico();
 
     }
+
+    public void exibirMensagem(String Mensagem) {
+        JOptionPane.showMessageDialog(null, Mensagem);
+    }
+
+    
 
 
 }

@@ -35,6 +35,27 @@ public class AgendamentoDao {
 
     }
     
+    
+    public void adicionar(Agendamento agenda){
+            String sql ="insert into agendamentos(id,cliente) values(default,?)";
+        
+        try {
+             pst = conexao.prepareStatement(sql);
+             pst.setString(1,agenda.getCliente().getNome());
+             
+             int executado = pst.executeUpdate();
+             System.out.println(executado);
+            if (executado >0) {
+                JOptionPane.showMessageDialog(null,"Agendamento Cadastrado com  sucesso ");
+              //  ComboBox.setSelectedItem(null);
+               
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+      }
+
+    
         public ArrayList <Agendamento> ListarTodosAgendamentos(){
         
         List<Agendamento> lista = new ArrayList<>();
@@ -48,23 +69,22 @@ public class AgendamentoDao {
                //listar a tabela de coisas
                 Cliente cliente = new Cliente("0", "0", 0,"0", '0', "0", "0");
                 Servico servico = new Servico(0, "", 0);
-               Agendamento agendamento = new Agendamento(0, cliente, servico, "sw", "sw", "sw");
-               String servicoConvertido = cliente.toString();
+               Agendamento agendamento = new Agendamento(0, cliente, servico, "ew", "sw", "sw");
                agendamento.setId(rs.getInt("id"));
                agendamento.setObservação(rs.getString("observacao"));
                agendamento.setValor(rs.getString("valor"));
                agendamento.setData(rs.getDate("data"));
-               cliente.setNome(rs.getString("cliente"));
                servico.setDescricao(rs.getString("servico"));
+               cliente.setNome(rs.getString("cliente"));
                lista.add(agendamento);
-               
+ 
                
             }
-            pst.close();
-            rs.close();
         } catch (Exception e) {
+            
             System.out.println("erro ao buscar a lista "+e);
-            JOptionPane.showMessageDialog(null, "Erro ao buscar os dados da databse");
+            JOptionPane.showMessageDialog(null, "Erro ao buscar dados do agendamento");
+
         }
          
         return (ArrayList<Agendamento>) lista;

@@ -18,10 +18,9 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Evandro Armando
  */
-public class HelperAgenda {
+public class HelperAgenda  implements  Helpers{
 
     private final Agenda view;
-
     public HelperAgenda(Agenda ViewAgenda) {
         this.view = ViewAgenda;
     }
@@ -89,6 +88,40 @@ public class HelperAgenda {
     public void setarValor(double valor) {
         
         view.getTextValor().setText(valor+"");
+    }
+
+    public Cliente obterDaJcomboboxCliente(){
+        
+       String Cliente= view.getTextCliente().getSelectedItem().toString();
+       Cliente modelo = new  Cliente(Cliente);
+        return modelo;
+    }
+    
+    
+    public Servico obterDaJcomboboxServico(){
+         String servico =view.getTextServico().getSelectedItem().toString();
+         Servico modelo = new Servico(0, servico, 0);
+         return modelo;
+    }
+    
+    @Override
+    public Agendamento obterModelo() {
+       
+        Cliente cliente = obterDaJcomboboxCliente();
+       Servico servico = obterDaJcomboboxServico();
+       String valor = view.getTextValor().getText();
+       String data = view.getTextFormatedData().getText();
+       String hora = view.getTextFormatedHora().getText();
+       String dataFormatada =data+""+hora;
+       String obs = view.getTextObservacao().getText();
+       Agendamento agenda = new Agendamento(0, cliente, servico, valor, dataFormatada, obs);
+       System.out.println("");
+        return agenda;
+    }
+
+    @Override
+    public void limpaTela() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 
