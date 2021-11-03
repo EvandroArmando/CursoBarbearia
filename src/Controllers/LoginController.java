@@ -42,7 +42,7 @@ public class LoginController {
     
     public void EntrarSistema(){
        
-      Usuario modelo = helper.obtermodelo();
+      Usuario modelo = helper.obterModelo();
       UsuarioDao usuarioAutenticado = new UsuarioDao();
       usuarioAutenticado.consultarUsuario(modelo);
       
