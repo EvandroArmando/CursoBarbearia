@@ -12,6 +12,7 @@ import Model.Servico;
 import View.Agenda;
 import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -40,7 +41,7 @@ public class HelperAgenda  implements  Helpers{
 
     public void PreencherTabelaAgendamentos(ArrayList<Agendamento> agendamentos) {
         
-               DefaultTableModel tableModel = (DefaultTableModel) view.getTableAgendamentos().getModel();
+        DefaultTableModel tableModel = (DefaultTableModel) view.getTableAgendamentos().getModel();
         tableModel.setNumRows(0);
         
         //precorrer a lista preencher
@@ -49,16 +50,15 @@ public class HelperAgenda  implements  Helpers{
             tableModel.addRow(new Object[]{
             agenda.getId(),
             agenda.getCliente(),
-            agenda.getServico().getDescricao(),
-            agenda.getValor(),
-            agenda.getdataFormatada(),
-            agenda.gethoraFormatada(),
-            agenda.getObservação(),
+            agenda.getServico().getDescricao()
+            
+ 
             
         });
 
     }
-
+        Agendamento  agenda = new Agendamento();
+        System.out.println("Valor da data"+agenda.getdataFormatada().toString());
     }
 
     public void PreencherJComboBoxServico(ArrayList<Servico> servicos) {

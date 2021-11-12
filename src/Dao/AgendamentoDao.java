@@ -37,11 +37,12 @@ public class AgendamentoDao {
     
     
     public void adicionar(Agendamento agenda){
-            String sql ="insert into agendamentos(id,cliente) values(default,?)";
+            String sql ="insert into agendamentos(id,cliente,data) values(default,?,?)";
         
         try {
              pst = conexao.prepareStatement(sql);
              pst.setString(1,agenda.getCliente().getNome());
+             pst.setString(2, agenda.getData().toString());
              
              int executado = pst.executeUpdate();
              System.out.println(executado);
@@ -69,11 +70,10 @@ public class AgendamentoDao {
                //listar a tabela de coisas
                 Cliente cliente = new Cliente("0", "0", 0,"0", '0', "0", "0");
                 Servico servico = new Servico(0, "", 0);
-               Agendamento agendamento = new Agendamento(0, cliente, servico, "ew", "sw", "sw");
+               Agendamento agendamento = new Agendamento(0, cliente, servico, "0.f", "", "sw");
                agendamento.setId(rs.getInt("id"));
                agendamento.setObservação(rs.getString("observacao"));
                agendamento.setValor(rs.getString("valor"));
-               agendamento.setData(rs.getDate("data"));
                servico.setDescricao(rs.getString("servico"));
                cliente.setNome(rs.getString("cliente"));
                lista.add(agendamento);

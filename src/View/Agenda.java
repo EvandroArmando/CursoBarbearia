@@ -419,7 +419,7 @@ public class Agenda extends javax.swing.JFrame {
     private javax.swing.JLabel LabelObservacao;
     private javax.swing.JLabel LabelServico;
     private javax.swing.JLabel LabelValor;
-    private javax.swing.JTable TableAgendamentos;
+    public static javax.swing.JTable TableAgendamentos;
     private javax.swing.JComboBox<String> TextCliente;
     public javax.swing.JFormattedTextField TextFormatedData;
     private javax.swing.JFormattedTextField TextFormatedHora;

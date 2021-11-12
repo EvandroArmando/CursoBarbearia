@@ -71,6 +71,8 @@ public class AgendaController {
         AgendamentoDao agendamento = new AgendamentoDao();
         ArrayList<Agendamento> agendamentos = agendamento.ListarTodosAgendamentos();
         this.helper.PreencherTabelaAgendamentos(agendamentos);
+
+        
     }  
     
     
