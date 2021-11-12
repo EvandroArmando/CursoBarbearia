@@ -70,7 +70,7 @@ public class AgendaController {
     public void actualizarTabela(){
         AgendamentoDao agendamento = new AgendamentoDao();
         ArrayList<Agendamento> agendamentos = agendamento.ListarTodosAgendamentos();
-        this.helper.PreencherTabelaAgendamentos(agendamentos);
+        this.helper.setarTabela(agendamentos);
 
         
     }  

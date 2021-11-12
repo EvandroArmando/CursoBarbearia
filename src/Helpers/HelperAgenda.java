@@ -39,28 +39,6 @@ public class HelperAgenda  implements  Helpers{
 
     }
 
-    public void PreencherTabelaAgendamentos(ArrayList<Agendamento> agendamentos) {
-        
-        DefaultTableModel tableModel = (DefaultTableModel) view.getTableAgendamentos().getModel();
-        tableModel.setNumRows(0);
-        
-        //precorrer a lista preencher
-        
-        for (Agendamento agenda : agendamentos) {
-            tableModel.addRow(new Object[]{
-            agenda.getId(),
-            agenda.getCliente(),
-            agenda.getServico().getDescricao()
-            
- 
-            
-        });
-
-    }
-        Agendamento  agenda = new Agendamento();
-        System.out.println("Valor da data"+agenda.getdataFormatada().toString());
-    }
-
     public void PreencherJComboBoxServico(ArrayList<Servico> servicos) {
         
         DefaultComboBoxModel  comboBoxModel =(DefaultComboBoxModel) view.getTextServico().getModel();
@@ -124,6 +102,27 @@ public class HelperAgenda  implements  Helpers{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    public void setarTabela(ArrayList<Agendamento> agendamentos) {
+        
+        DefaultTableModel modeloTabela = (DefaultTableModel) view.getTableAgendamentos().getModel();
+        modeloTabela.setNumRows(0);
+        
+        for (Agendamento agendamento : agendamentos) {
+            modeloTabela.addRow(new Object[]{
+                agendamento.getId(),
+                agendamento.getCliente(),
+                agendamento.getServico().getDescricao(),
+                agendamento.getValor(),
+                agendamento.getObservação(),
+                agendamento.getdataFormatada(),
+                agendamento.gethoraFormatada()
+            });
+            
+        }
+    }
+
+
+    
 
     
     

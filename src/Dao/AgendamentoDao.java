@@ -12,7 +12,10 @@ import database.Modulo_de_conexao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import javax.swing.JOptionPane;
@@ -67,13 +70,19 @@ public class AgendamentoDao {
               // a linha executa a query
               rs  = pst.executeQuery();
             while (rs.next()) {  
-               //listar a tabela de coisas
+                //converter de string para date
+              String data= rs.getString("data");
+              DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");  
+              Date dataFormatada= dateFormat.parse(data);
+                             //listar a tabela de coisas
+
                 Cliente cliente = new Cliente("0", "0", 0,"0", '0', "0", "0");
                 Servico servico = new Servico(0, "", 0);
                Agendamento agendamento = new Agendamento(0, cliente, servico, "0.f", "", "sw");
                agendamento.setId(rs.getInt("id"));
                agendamento.setObservação(rs.getString("observacao"));
                agendamento.setValor(rs.getString("valor"));
+               agendamento.setData(dataFormatada);
                servico.setDescricao(rs.getString("servico"));
                cliente.setNome(rs.getString("cliente"));
                lista.add(agendamento);

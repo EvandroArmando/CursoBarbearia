@@ -328,13 +328,10 @@ public class Agenda extends javax.swing.JFrame {
 
         TableAgendamentos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"1", "Alan", "Corte", "10", "22/04/2018", "08:00", ""},
-                {"2", "Abigail", "Barba", "20", "22/04/2018", "09:00", "Pode se Atrazar um pouco"},
-                {"3", "Pedro", "Barba", "20", "23/04/2018", "08:00", null},
-                {"4", "Teste", "Barba + Corte", "30", "23/04/2018", "09:00", null}
+
             },
             new String [] {
-                "Id", "Cliente", "Serviço", "Valor", "Data", "Hora", "Observação"
+                "Id", "Cliente", "Serviço", "Valor", "Observação", "Data", "Hora"
             }
         ));
         jScrollPane1.setViewportView(TableAgendamentos);
@@ -433,9 +430,9 @@ public class Agenda extends javax.swing.JFrame {
 
     private void iniciar() {
         controller.actualizarjcomboBoxCliente();
-        controller.actualizarTabela();
         controller.actualizarjcomboBoxServico();
         controller.actualizarPrecoServico();
+        controller.actualizarTabela();
 
     }
 
