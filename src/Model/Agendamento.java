@@ -102,7 +102,7 @@ public final class Agendamento {
    }
    
    public String getdataFormatada(){
-     return new SimpleDateFormat("dd/MM/yyyy").format(data);
+     return new SimpleDateFormat("dd-MM-yyyy").format(data);
        
    }
 

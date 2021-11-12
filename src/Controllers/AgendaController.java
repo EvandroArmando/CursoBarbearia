@@ -38,6 +38,7 @@ public class AgendaController {
         Agendamento agendar = helper.obterModelo();
         AgendamentoDao dao =  new AgendamentoDao();
         dao.adicionar(agendar);
+        actualizarTabela();
     }
     
     
