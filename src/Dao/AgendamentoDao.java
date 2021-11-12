@@ -40,12 +40,15 @@ public class AgendamentoDao {
     
     
     public void adicionar(Agendamento agenda){
-            String sql ="insert into agendamentos(id,cliente,data) values(default,?,?)";
+            String sql ="insert into agendamentos(id,cliente,data,servico,observacao,valor) values(default,?,?,?,?,?)";
         
         try {
              pst = conexao.prepareStatement(sql);
              pst.setString(1,agenda.getCliente().getNome());
-             pst.setString(2, agenda.getData().toString());
+             pst.setString(2, agenda.getdataFormatada());
+             pst.setString(3, agenda.getServico().getDescricao());
+             pst.setString(4, agenda.getObservação());
+             pst.setString(5, agenda.getValor());
              
              int executado = pst.executeUpdate();
              System.out.println(executado);

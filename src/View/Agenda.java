@@ -410,7 +410,7 @@ public class Agenda extends javax.swing.JFrame {
     private javax.swing.JLabel LabelAgendaFundo;
     private javax.swing.JLabel LabelAgendaPainelFundo;
     private javax.swing.JLabel LabelCliente;
-    private javax.swing.JLabel LabelData;
+    public javax.swing.JLabel LabelData;
     private javax.swing.JLabel LabelHora;
     private javax.swing.JLabel LabelId;
     private javax.swing.JLabel LabelObservacao;
