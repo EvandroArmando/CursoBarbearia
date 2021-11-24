@@ -62,10 +62,12 @@ public class Email {
      * Função para enviar o e-mail ao destinatário.
      */
     public void enviar (){
+        
+                
         SimpleEmail email = new SimpleEmail();
             email.setSSLOnConnect(true);
             email.setHostName("smtp.gmail.com");
-            email.setSslSmtpPort("465");
+            email.setSslSmtpPort("565");
        email.setAuthenticator(new DefaultAuthenticator(REMETENTE_NOME, REMETENTE_SENHA));
        try {
            email.setFrom(REMETENTE_NOME);

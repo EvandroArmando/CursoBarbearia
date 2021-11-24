@@ -21,7 +21,7 @@ public class EmailTeste {
     public static void main(String[] args) {
          
         
-        Email email = new Email("ola", "te amo muito", "evandro@gmail.com");
+        Email email = new Email("ola", "te amo muito", "juniorlena508@gmail.com");
         
         email.enviar();
         
