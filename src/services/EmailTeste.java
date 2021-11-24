@@ -21,7 +21,7 @@ public class EmailTeste {
     public static void main(String[] args) {
          
         
-        Email email = new Email("Senha e Usuário Sistema Service Desk", "Seggue usuário e senha para acesso ao sistema de auditoria\n"+"Usuario:FelipeSoster\n"+"Senha: 123456", "tiagoluz.h607@gmail.com");
+        Email email = new Email("ola", "te amo muito", "evandro@gmail.com");
         
         email.enviar();
         
